@@ -5,3 +5,4 @@
 # Tecnologías
 - Nodejs 16
 - PostgreSQL
+- Java 11
