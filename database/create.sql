@@ -1,19 +1,25 @@
+drop table if exists departamento;
+
 create table departamento(
     id_departamento SERIAL PRIMARY KEY,
     nombre_departamento varchar(25)
 );
+
+drop table if exists tipoventa;
 
 create table tipoventa(
     id_tipoventa SERIAL PRIMARY KEY,
     nombre_tipoventa varchar(25)
 );
 
+drop table if exists proveedor;
+
 create table proveedor(
     id_proveedor SERIAL PRIMARY KEY,
     nombre_proveedor varchar(50)
 );
 
-drop table inventario;
+drop table if exists inventario;
 
 create table inventario(
     codigo SERIAL PRIMARY KEY,
