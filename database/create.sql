@@ -44,7 +44,7 @@ drop table if exists usuario;
 
 create table usuario(
     id_usuario SERIAL PRIMARY KEY,
-    nombre_usuario varchar(50),
+    nombre varchar(50),
     contrasena varchar(50)
 );
 
