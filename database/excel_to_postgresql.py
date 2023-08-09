@@ -12,7 +12,7 @@ def getIndex(lista, valor):
 # Parámetros de conexión a la base de datos
 db_params = {
     "host": "localhost",
-    "database": "ferretería",
+    "database": "ferreteria",
     "user": "postgres",
     "password": "1212"
 }
