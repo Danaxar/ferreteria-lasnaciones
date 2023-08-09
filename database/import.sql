@@ -98,3 +98,13 @@ VALUES
     ('valprik'),
     ('vitel'),
     ('weber');
+
+-- Tipo de usuario
+insert into
+    acceso(nombre_acceso)
+values
+    ('Ventas'),
+    ('Productos'),
+    ('Inventario'),
+    ('Reportes'),
+    ('Ajustes');
