@@ -1,6 +1,14 @@
 import csv
 import psycopg2
 
+
+def getIndex(lista, valor):
+    for proveedor in lista:
+        if proveedor[1] == valor:
+            return proveedor[0]
+    return 'NULL'
+
+
 # Parámetros de conexión a la base de datos
 db_params = {
     "host": "localhost",
@@ -20,6 +28,9 @@ connection = None
 try:
     connection = psycopg2.connect(**db_params)
     cursor = connection.cursor()
+    cursor.execute("SELECT * FROM proveedor")
+    proveedores = cursor.fetchall()
+    print("Proveedores: ", proveedores)
 
     # Leer y registrar el contenido del CSV en la tabla
     count = 0
@@ -30,7 +41,7 @@ try:
         for row in csv_reader:
             insert_query = f"""
                 INSERT INTO {table_name} (codigo_producto, producto, pventa, pmayoreo, id_departamento, existencia, tipoventa, id_proveedor)
-                VALUES ('{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {row[4]}, {row[5]}, {row[6]}, {row[7]});
+                VALUES ('{row[0]}', '{row[1]}', {row[2]}, {row[3]}, {'NULL' if row[4] == "- Sin Departamento -" else row[4]}, {row[5]}, {1 if row[6] == "UNIDAD" else 2}, {getIndex(proveedores, row[7])});
             """
             cursor.execute(insert_query)
             connection.commit()
@@ -45,6 +56,6 @@ except (Exception, psycopg2.Error) as error:
 
 finally:
     if connection:
-        # cursor.close()
+        cursor.close()
         connection.close()
         print("Conexión cerrada.")

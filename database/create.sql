@@ -23,7 +23,7 @@ drop table if exists inventario;
 
 create table inventario(
     codigo SERIAL PRIMARY KEY,
-    codigo_producto varchar(20),
+    codigo_producto varchar(20) unique,
     producto varchar(100),
     pventa int,
     pmayoreo int,
@@ -32,3 +32,8 @@ create table inventario(
     tipoventa int REFERENCES tipoventa(id_tipoventa),
     id_proveedor int REFERENCES proveedor(id_proveedor)
 );
+
+select
+    *
+from
+    inventario;
