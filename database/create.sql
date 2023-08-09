@@ -29,5 +29,6 @@ create table inventario(
     pmayoreo int,
     id_departamento int REFERENCES departamento(id_departamento),
     existencia float,
+    tipoventa int REFERENCES tipoventa(id_tipoventa),
     id_proveedor int REFERENCES proveedor(id_proveedor)
 );
