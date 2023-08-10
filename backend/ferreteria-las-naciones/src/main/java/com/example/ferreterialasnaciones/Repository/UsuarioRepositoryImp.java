@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
 
+import java.util.List;
+
 @Repository
 public class UsuarioRepositoryImp implements UsuarioRepository{
     @Autowired
@@ -20,6 +22,14 @@ public class UsuarioRepositoryImp implements UsuarioRepository{
                     .addParameter("contrasena", usuario.getContrasena())
                     .executeUpdate();
 
+        }
+    }
+
+    @Override
+    public List<Usuario> getAll(){
+        String query = "SELECT * FROM usuario";
+        try (Connection connection = sql2o.open()) {
+            return connection.createQuery(query).executeAndFetch(Usuario.class);
         }
     }
 }

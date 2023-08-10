@@ -1,6 +1,5 @@
 package com.example.ferreterialasnaciones.Models;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data

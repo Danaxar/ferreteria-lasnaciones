@@ -2,6 +2,9 @@ package com.example.ferreterialasnaciones.Repository;
 
 import com.example.ferreterialasnaciones.Models.Usuario;
 
+import java.util.List;
+
 public interface UsuarioRepository {
-    public void save(Usuario usuario);
+    void save(Usuario usuario);
+    List<Usuario> getAll();
 }
