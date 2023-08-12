@@ -1,9 +1,10 @@
 package com.example.ferreterialasnaciones.Repository;
 
-import com.example.ferreterialasnaciones.Entities.Usuario;
+import com.example.ferreterialasnaciones.Entities.Proveedor;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
+public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
 }
+

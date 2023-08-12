@@ -1,13 +1,9 @@
 package com.example.ferreterialasnaciones.Repository;
 
-import com.example.ferreterialasnaciones.Models.Tipoventa;
+import com.example.ferreterialasnaciones.Entities.Tipoventa;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface TipoventaRepository {
-    void save(Tipoventa tipoVenta);
-    Tipoventa getById(Integer id);
-    List<Tipoventa> getAll();
-    void update(Tipoventa tipoVenta);
-    void delete(Integer id);
+@Repository
+public interface TipoventaRepository extends JpaRepository<Tipoventa, Integer> {
 }

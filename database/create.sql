@@ -22,7 +22,7 @@ create table proveedor(
 drop table if exists inventario;
 
 create table inventario(
-    codigo SERIAL PRIMARY KEY,
+    id_inventario SERIAL PRIMARY KEY,
     codigo_producto varchar(20) unique,
     producto varchar(100),
     pventa int,
@@ -44,8 +44,8 @@ drop table if exists usuario;
 
 create table usuario(
     id_usuario SERIAL PRIMARY KEY,
-    nombre varchar(50),
-    contrasena varchar(50)
+    nombre_usuario varchar(50),
+    contrasena_usuario varchar(50)
 );
 
 drop table if exists usuario_acceso;

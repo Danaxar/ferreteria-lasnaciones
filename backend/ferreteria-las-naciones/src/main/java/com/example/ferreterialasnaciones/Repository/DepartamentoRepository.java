@@ -1,13 +1,9 @@
 package com.example.ferreterialasnaciones.Repository;
 
-import com.example.ferreterialasnaciones.Models.Departamento;
+import com.example.ferreterialasnaciones.Entities.Departamento;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
-public interface DepartamentoRepository {
-    void save(Departamento departamento);
-    Departamento getById(Integer id);
-    List<Departamento> getAll();
-    void update(Departamento departamento);
-    void delete(Integer id);
+@Repository
+public interface DepartamentoRepository extends JpaRepository<Departamento, Integer> {
 }
