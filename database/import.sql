@@ -108,3 +108,12 @@ values
     ('Inventario'),
     ('Reportes'),
     ('Ajustes');
+
+-- Usuarios
+insert into
+    usuario(nombre_usuario, contrasena_usuario)
+values
+('kevin', 'zeus1307'),
+('reinaldo', '123'),
+    ('bernardo', '123'),
+    ('marina', 123);
